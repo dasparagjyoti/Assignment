@@ -1,2 +1,2 @@
 # Assignment
-All my M.Tech assignment for various courses
+All my M.Tech assignments for various courses
