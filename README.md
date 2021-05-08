@@ -1,2 +1,2 @@
-# Assignment
-All my M.Tech assignments for various courses
+# Practical
+DS & Algo and Machine Learning
