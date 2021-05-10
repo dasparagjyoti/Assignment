@@ -1,2 +1,2 @@
 # Practical
-DS & Algo and Machine Learning
+Implementation of various DS & Algo and Machine Learning problems.
