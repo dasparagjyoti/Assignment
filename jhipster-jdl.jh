@@ -1,0 +1,164 @@
+entity District {
+    name String
+}
+entity Block {
+    name String
+}
+entity GramPanchayat {
+    name String
+}
+entity Village {
+    name String
+}
+entity SocialCategory {
+    name String
+}
+entity SelfHelpGroup {
+    code String,
+    name String,
+    formationDate LocalDate,
+    bankName String,
+    branchName String,
+    accountNumber String,
+    voName String,
+    clfName String,
+    mobileNo Long,
+    lastModifiedBy String,
+    lastModifiedOn LocalDate
+}
+entity ShgMember {
+    name String,
+    code String,
+    voterId String,
+    aadhaarId String,
+    mobileNumber Long,
+    bankName String,
+    branchName String,
+    accountNumber String,
+   	lastModifiedBy String,
+    lastModifiedOn LocalDate
+}
+entity LivelihoodCategory{
+	name String
+}
+entity Livelihood{
+    totalIncome BigDecimal,
+    financialYear Long,
+    lastModifiedBy String,
+    lastModifiedOn LocalDate
+}
+entity CropSeason{
+    name String
+}
+entity AgricultureCrop{
+    name String
+}
+entity Agriculture {
+    quantitySold BigDecimal,
+    averageMarketPrice BigDecimal,
+    otherAgricultureCrop String
+}
+
+entity LivestockCategory{
+    name String
+}
+entity LivestockAnimal{
+    name String,
+    isProducingMilk Boolean,
+    isProducingEgg Boolean
+    
+  }
+entity Livestock{
+    quantitySold BigDecimal,
+    averageMarketPrice BigDecimal,
+    totalIncomeFromQuantity BigDecimal,
+    milkSold BigDecimal,
+    averageMarketPricePerLtr BigDecimal,
+    totalIncomeFromMilk BigDecimal,
+    eggSold BigDecimal,
+    averageMarketPricePerEgg BigDecimal,
+    totalIncomeFromEgg BigDecimal
+}
+
+
+entity HorticultureCategory{
+    name String
+}
+entity HorticultureCrop{
+    name String,
+    unit String
+}
+entity Horticulture{
+    quantitySold BigDecimal,
+    averageMarketPrice BigDecimal,
+    otherHorticultureCrop String
+}
+entity SericultureCategory{
+	name String
+}
+entity Sericulture{
+	cocoonSold BigDecimal,
+    avgMarketPricePerCocoon BigDecimal,
+    totalIncomePerCocoon BigDecimal,
+    yarnSold BigDecimal,
+    avgMarketPricePerYarn BigDecimal,
+    totalIncomePerYarn BigDecimal,
+    otherSericulture String
+}
+entity Fishery{
+    quantitySold BigDecimal,
+    totalIncome BigDecimal
+}
+entity NonFarmActivity{
+ 	name String
+}
+entity NonFarmCategory{
+ 	name String 
+}
+entity NonFarm{
+    quantitySold BigDecimal,
+    avgMarketPrice BigDecimal,
+    otherNonFarm String
+}
+
+entity SpecialProjectCategory{
+	name String
+}
+
+entity SpecialProject{
+	otherSpecialCategoryName String
+}
+
+relationship OneToMany {
+    District{block} to Block,
+    Block{gramPanchayat} to GramPanchayat,
+    GramPanchayat{village} to Village,
+    Village{selfHelpGroup} to SelfHelpGroup,
+    SocialCategory{shgMember} to ShgMember,
+    SelfHelpGroup{shgMember} to ShgMember,
+    CropSeason{crop} to AgricultureCrop,
+    AgricultureCrop{agricultureCropInfo} to Agriculture,
+    LivestockCategory{livestockAnimal} to LivestockAnimal,
+    LivestockAnimal{livestock} to Livestock,
+  	HorticultureCategory{horticulturCrop} to HorticultureCrop,
+    HorticultureCrop{horticulture} to Horticulture,
+    SericultureCategory{sericulture} to Sericulture,
+    ShgMember{livelihood} to Livelihood,
+    NonFarmActivity{nonFarmCategory} to NonFarmCategory,
+    NonFarmCategory{nonFarm} to NonFarm,
+    SpecialProjectCategory{specialProject} to SpecialProject,
+    ShgMember{specialProject} to SpecialProject,
+    LivelihoodCategory{livelihood} to Livelihood
+}
+relationship OneToOne{
+    Agriculture{livelihood} to Livelihood,
+    Horticulture{livelihood} to Livelihood,
+    Sericulture{livelihood} to Livelihood,
+    Fishery{livelihood} to Livelihood,
+    NonFarm{livelihood} to Livelihood,
+    Livestock {livelihood} to Livelihood
+    }
+    
+
+
+
