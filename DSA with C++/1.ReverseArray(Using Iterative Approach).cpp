@@ -18,7 +18,7 @@ using namespace std;
 void printArray(int arr[],int size)/* Utility function to print an array */
 {
 	for(int i=0; i<size; i++)
-	cout << arr[i] << " "; //to get the gap between output
+	cout << arr[i] << " "; //to get the gap between outpu
     
     cout << endl;
 }
