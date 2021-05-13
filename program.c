@@ -1,7 +1,4 @@
-/*
-Do not modify this file.
-Make all of your changes to main.c instead.
-*/
+
 
 #include "program.h"
 
