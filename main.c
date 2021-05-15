@@ -1,10 +1,4 @@
-/*
-Main program for the virtual memory project.
-Make all of your modifications to this file.
-You may add or rearrange any code or data as you need.
-The header files page_table.h and disk.h explain
-how to use the page table and disk interfaces.
-*/
+
 
 #include "page_table.h"
 #include "disk.h"
