@@ -83,5 +83,5 @@ void scan_program( char *cdata, int length )
 		}
 	}
 
-	printf("scan result is %d\n",total)
+	printf("scan result is %d\n",total);
 }
