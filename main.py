@@ -30,3 +30,5 @@ cv2.imshow('image', img)
 cv2.imshow('finalresult', finalresult)
 cv2.waitKey()
 
+//What if we consider noise
+
